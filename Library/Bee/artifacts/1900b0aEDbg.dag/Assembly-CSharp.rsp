@@ -352,8 +352,11 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 -analyzer:"D:/Unity/2022.3.44f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/Unity/2022.3.44f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/LookPlayer.cs"
-"Assets/MovePlayer.cs"
+"Assets/Scripts/BallEnemyController.cs"
+"Assets/Scripts/LookPlayer.cs"
+"Assets/Scripts/MovePlayer.cs"
+"Assets/Scripts/RayShooter.cs"
+"Assets/Scripts/TurretController.cs"
 -langversion:9.0
 /deterministic
 /optimize-
