@@ -7,9 +7,15 @@ public class RayShooter : MonoBehaviour
     [SerializeField]
     private GUIStyle _style;
     private Camera _camera;
+   
+    private Animator _animator;
+   
+    [SerializeField]
+    private GameObject projectilePrefab;
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponentInParent<Animator>();;
         _camera = GetComponent<Camera>();
         if (_camera == null)
         {
@@ -33,7 +39,7 @@ public class RayShooter : MonoBehaviour
             if (Physics.Raycast( ray, out hitInfo))
             {
                 //Debug.Log($" Hit: {hitInfo.point.ToString()}");
-
+                _animator.SetBool("atack", true);
                 StartCoroutine(CreateSphereIndicator(hitInfo.point));
                 
                 GameObject hitObject = hitInfo.transform.gameObject;
@@ -52,13 +58,14 @@ public class RayShooter : MonoBehaviour
 
     private IEnumerator CreateSphereIndicator(Vector3 hitInfoPoint)
     {
-        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        sphere.transform.position = hitInfoPoint;
-        
-        yield return new WaitForSeconds(1f);
-        Destroy(sphere);
-    }
+        GameObject sphere = Instantiate(projectilePrefab, hitInfoPoint, Quaternion.identity);
 
+        yield return new WaitForSeconds(1.5f); 
+        Destroy(sphere);
+        
+        _animator.SetBool("atack", false);
+    }
+    
     private void OnGUI()
     {
         float size = _style.fontSize;
