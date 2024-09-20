@@ -50,6 +50,8 @@
     <Compile Include="Assets\Scripts\TurretController.cs" />
     <Compile Include="Assets\Scripts\LookPlayer.cs" />
     <Compile Include="Assets\Scripts\RayShooter.cs" />
+    <None Include="Assets\SciFi_Space_Soldier\Resources\Shaders\SpaceStation_PBR_Basic.shader" />
+    <None Include="Assets\CastlePack\Prefabs\readme.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:\Unity\2022.3.44f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
